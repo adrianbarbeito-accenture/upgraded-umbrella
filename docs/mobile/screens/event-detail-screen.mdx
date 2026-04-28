@@ -1,0 +1,25 @@
+---
+title: EventDetailScreen
+description: "Mobile screen in the `view` feature."
+---
+
+## Wireframe
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" role="img" aria-label="EventDetailScreen wireframe" style="max-width:360px;border:1px solid #ddd;border-radius:24px;background:#fafafa"><rect x="16" y="16" width="328" height="56" rx="6" fill="#e5e7eb" stroke="transparent"/><text x="180" y="48" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" fill="#111">EventDetailScreen</text><rect x="16" y="84" width="328" height="620" rx="6" fill="#ffffff" stroke="#cbd5e1"/><rect x="28" y="96" width="304" height="44" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/><text x="36" y="122" text-anchor="start" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="400" fill="#111">_buildBody</text></svg>
+
+## Purpose
+
+> TODO (screen prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Source
+
+`lib/view/events/event_detail/view/event_detail_screen.dart`
+
+## State (cubits)
+
+- [`EventDetailCubit`](/mobile/state/event-detail-cubit)
+
+## Endpoints called
+
+- [`DELETE /v1/account/events`](/api/account/account-controller-dis-join-event)
+- [`POST /v1/account/events`](/api/account/account-controller-join-event)

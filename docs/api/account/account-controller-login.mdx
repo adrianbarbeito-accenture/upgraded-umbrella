@@ -1,0 +1,52 @@
+---
+title: POST /v1/account/login
+description: Login an user.
+---
+
+**Tag:** `Account` &nbsp;·&nbsp; **Operation:** `AccountController_login`
+
+## Purpose
+
+> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant C as LoginScreen
+  participant API as Backend
+  participant DB as MongoDB
+  C->>API: POST /v1/account/login
+  API->>DB: query
+  DB-->>API: result
+  API-->>C: 200
+```
+
+## Parameters
+
+| Name | In | Required | Type | Description |
+| ---- | -- | -------- | ---- | ----------- |
+| `Content-Type` | header | no | `string` | application/json |
+
+## Request body
+
+Schema: [`AccountLoginDto`](/data-model/account-login-dto)
+
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `email` | `string` | yes |  |
+| `password` | `string` | yes |  |
+
+## Responses
+
+- **200** — User has successfully logged in — [`AccountLoggedDto`](/data-model/account-logged-dto)
+- **400** — Some inputs are missed or wrong
+- **401** — Invalid credentials
+- **403** — User account is unverified
+- **423** — User account is blocked
+- **429** — Too many requests, rate limit exceeded
+- **500** — Error not handled
+
+## Used by
+
+- [`LoginScreen`](/mobile/screens/login-screen)

@@ -1,0 +1,50 @@
+---
+title: POST /v1/account/register
+description: Register a new user.
+---
+
+**Tag:** `Account` &nbsp;·&nbsp; **Operation:** `AccountController_register`
+
+## Purpose
+
+> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant C as RegisterScreen
+  participant API as Backend
+  participant DB as MongoDB
+  C->>API: POST /v1/account/register
+  API->>DB: query
+  DB-->>API: result
+  API-->>C: 201
+```
+
+## Parameters
+
+| Name | In | Required | Type | Description |
+| ---- | -- | -------- | ---- | ----------- |
+| `Content-Type` | header | no | `string` | application/json |
+
+## Request body
+
+Schema: [`AccountRegisterDto`](/data-model/account-register-dto)
+
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `name` | `string` | yes |  |
+| `lastName` | `string` | yes |  |
+| `email` | `string` | yes |  |
+| `password` | `string` | yes |  |
+
+## Responses
+
+- **201** — User has successfully created and verification email has been sent
+- **400** — Some inputs are missed or wrong
+- **500** — Error not handled
+
+## Used by
+
+- [`RegisterScreen`](/mobile/screens/register-screen)

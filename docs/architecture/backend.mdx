@@ -1,0 +1,117 @@
+---
+title: Backend
+description: "NestJS modules, controllers, and providers."
+---
+
+## Modules
+
+### `AccountModule`
+
+File: `src/infrastructure/http/modules/account.module.ts`
+
+**Imports:** `AccountSharedModule`, `EventSharedModule`, `PollSharedModule`
+
+**Controllers:** `AccountController`
+
+**Providers:** `ForgotPasswordService`, `LoginService`, `RegisterService`, `RefreshTokenService`, `JoinEventService`, `GetMyEventsService`, `GetEventsCreatedByUserService`, `GetProfileService`, `CloseCurrentSessionService`, `DisjoinEventService`, `UpdateForgotPasswordService`, `UpdatePasswordService`, `DeleteAccountService`, `ActivateAccountService`, `SessionGenerator`, `SessionManager`, `GenerateMailService`, `SendEmailVerificationService`, `ValidateLoginCredentialsService`, `LoginAttemptsRepository`, `TemporalCodeRepository`, `NodemailerService`, `AuthGuard`, `TemporalCodeRepository`
+
+### `AccountSharedModule`
+
+File: `src/infrastructure/http/modules/account-shared.module.ts`
+
+**Imports:** `JwtModule`
+
+**Controllers:** _(none)_
+
+**Providers:** `AccountRepository`, `SessionRepository`, `EventParticipantsRepository`
+
+### `AppModule`
+
+File: `src/app.module.ts`
+
+**Imports:** `ConfigModule`, `ThrottlerModule`, `LoggerModule`, `AccountModule`, `EventModule`, `PollModule`, `UsersModule`
+
+**Controllers:** _(none)_
+
+**Providers:** _(none)_
+
+### `EventModule`
+
+File: `src/infrastructure/http/modules/event.module.ts`
+
+**Imports:** `AccountSharedModule`, `EventSharedModule`
+
+**Controllers:** `EventController`
+
+**Providers:** `AuthGuard`, `CreateEventService`, `DeleteEventService`, `GetEventListService`, `GetEventUsersListService`, `UpdateEventService`
+
+### `EventSharedModule`
+
+File: `src/infrastructure/http/modules/event-shared.module.ts`
+
+**Imports:** _(none)_
+
+**Controllers:** _(none)_
+
+**Providers:** `EventRepository`
+
+### `MongoDataAccessModule`
+
+File: `src/infrastructure/db/modules/mongo/mongo-da.module.ts`
+
+**Imports:** `MongooseModule`, `MongooseModule`, `MongooseModule`, `MongooseModule`, `MongooseModule`, `MongooseModule`, `MongooseModule`, `MongooseModule`
+
+**Controllers:** _(none)_
+
+**Providers:** _(none)_
+
+### `NoDataAccessModule`
+
+File: `src/infrastructure/db/modules/none/no-da.module.ts`
+
+**Imports:** _(none)_
+
+**Controllers:** _(none)_
+
+**Providers:** _(none)_
+
+### `PollModule`
+
+File: `src/infrastructure/http/modules/poll.module.ts`
+
+**Imports:** `AccountSharedModule`, `PollSharedModule`
+
+**Controllers:** `PollController`
+
+**Providers:** `AuthGuard`, `CreatePollService`, `GetPollListService`, `VotePollService`
+
+### `PollSharedModule`
+
+File: `src/infrastructure/http/modules/poll-shared.module.ts`
+
+**Imports:** _(none)_
+
+**Controllers:** _(none)_
+
+**Providers:** `PollRepository`
+
+### `UsersModule`
+
+File: `src/infrastructure/http/modules/users.module.ts`
+
+**Imports:** `AccountSharedModule`, `UsersSharedModule`
+
+**Controllers:** `UsersController`
+
+**Providers:** `AuthGuard`, `GetUsersService`
+
+### `UsersSharedModule`
+
+File: `src/infrastructure/http/modules/users-shared.module.ts`
+
+**Imports:** _(none)_
+
+**Controllers:** _(none)_
+
+**Providers:** `UsersRepository`
+

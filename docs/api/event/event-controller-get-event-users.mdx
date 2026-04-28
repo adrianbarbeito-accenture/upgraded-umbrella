@@ -1,0 +1,43 @@
+---
+title: "GET /v1/events/{eventId}/users"
+description: Return a list of the names of the users who have joined an event.
+---
+
+**Tag:** `Event` &nbsp;·&nbsp; **Operation:** `EventController_getEventUsers`
+
+## Purpose
+
+> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant API as Backend
+  participant DB as MongoDB
+  C->>API: GET /v1/events/{eventId}/users
+  API->>DB: query
+  DB-->>API: result
+  API-->>C: 200
+```
+
+## Parameters
+
+| Name | In | Required | Type | Description |
+| ---- | -- | -------- | ---- | ----------- |
+| `eventId` | path | yes | `string` | Unique identifier of the event |
+| `Authorization` | header | yes | `string` | Bearer accessToken |
+| `Content-Type` | header | no | `string` | application/json |
+
+## Responses
+
+- **200** — List of users — [`UserListDto`](/data-model/user-list-dto)
+- **401** — Invalid credentials
+- **404** — EventId not found
+- **429** — Too many requests, rate limit exceeded
+- **500** — Error not handled
+
+## Used by
+
+_(no mobile screens detected calling this endpoint)_
