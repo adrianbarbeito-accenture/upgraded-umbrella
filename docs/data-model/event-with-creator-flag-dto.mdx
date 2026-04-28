@@ -1,0 +1,21 @@
+---
+title: EventWithCreatorFlagDto
+description: "Data model: EventWithCreatorFlagDto."
+---
+
+## Properties
+
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `eventId` | `string` | yes |  |
+| `eventName` | `string` | yes |  |
+| `eventDate` | `string` | yes |  |
+| `description` | `string` | yes |  |
+| `eventType` | `string` | yes |  |
+| `imageUrl` | `string` | no |  |
+| `location` | `LocationDto` | yes |  |
+| `tags` | `array` | no |  |
+| `joinDeadline` | `string` | yes |  |
+| `maxCapacity` | `number` | no |  |
+| `currentAttendeeCount` | `number` | yes |  |
+| `isCreatedByCurrentUser` | `boolean` | yes | Indicates if the current user created the event |

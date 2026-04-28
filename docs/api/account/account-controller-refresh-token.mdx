@@ -1,0 +1,49 @@
+---
+title: POST /v1/account/refresh
+description: Refresh token.
+---
+
+**Tag:** `Account` &nbsp;·&nbsp; **Operation:** `AccountController_refreshToken`
+
+## Purpose
+
+> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant API as Backend
+  participant DB as MongoDB
+  C->>API: POST /v1/account/refresh
+  API->>DB: query
+  DB-->>API: result
+  API-->>C: 200
+```
+
+## Parameters
+
+| Name | In | Required | Type | Description |
+| ---- | -- | -------- | ---- | ----------- |
+| `Content-Type` | header | no | `string` | application/json |
+
+## Request body
+
+Schema: [`RefreshTokenDto`](/data-model/refresh-token-dto)
+
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `refreshToken` | `string` | yes |  |
+
+## Responses
+
+- **200** — A new pair of accesToken and refreshToken is succesfully provided — [`NewPairOfTokensDto`](/data-model/new-pair-of-tokens-dto)
+- **400** — Some inputs are missed or wrong
+- **401** — Invalid credentials
+- **429** — Too many requests, rate limit exceeded
+- **500** — Error not handled
+
+## Used by
+
+_(no mobile screens detected calling this endpoint)_

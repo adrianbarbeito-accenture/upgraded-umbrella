@@ -1,0 +1,41 @@
+---
+title: Home Tab
+description: "User flow in the `view` feature."
+---
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant S as HomeTabScreen
+  participant C as HomeTabCubit
+  participant R as Repository
+  participant API as Backend
+  participant DB as MongoDB
+
+  U->>S: interact
+  S->>C: dispatch
+  C->>R: call method
+  R->>API: GET /v1/events
+  API->>DB: query
+  DB-->>API: result
+  API-->>R: 200 response
+  R-->>C: data
+  C-->>S: emit state
+  S-->>U: render
+```
+
+## Narrative
+
+> TODO (flow prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Components
+
+- Screen: [`HomeTabScreen`](/mobile/screens/home-tab-screen)
+- Cubit: [`HomeTabCubit`](/mobile/state/home-tab-cubit)
+- Repository: _unknown_
+
+## Endpoints
+
+- [`GET /v1/events`](/api/event/event-controller-get-events)

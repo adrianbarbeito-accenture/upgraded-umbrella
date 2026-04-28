@@ -1,0 +1,169 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Esmorga",
+  "theme": "mint",
+  "colors": {
+    "primary": "#0EA5E9",
+    "light": "#38BDF8",
+    "dark": "#0369A1"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "group": "Architecture",
+            "pages": [
+              "architecture/overview",
+              "architecture/backend",
+              "architecture/mobile"
+            ]
+          },
+          {
+            "group": "User flows",
+            "pages": [
+              "flows/view-change-password",
+              "flows/view-event-detail",
+              "flows/view-home-tab",
+              "flows/view-login",
+              "flows/view-my-events",
+              "flows/view-recover-password",
+              "flows/view-register",
+              "flows/view-registration-confirmation",
+              "flows/view-reset-password"
+            ]
+          },
+          {
+            "group": "Mobile screens",
+            "pages": [
+              "mobile/screens/change-password-screen",
+              "mobile/screens/create-event-date-screen",
+              "mobile/screens/create-event-image-screen",
+              "mobile/screens/create-event-location-screen",
+              "mobile/screens/create-event-screen",
+              "mobile/screens/create-event-type-screen",
+              "mobile/screens/event-attendees-screen",
+              "mobile/screens/event-detail-screen",
+              "mobile/screens/home-screen",
+              "mobile/screens/home-tab-screen",
+              "mobile/screens/logged-out-view",
+              "mobile/screens/login-screen",
+              "mobile/screens/my-events-screen",
+              "mobile/screens/poll-detail-screen",
+              "mobile/screens/poll-detail-view",
+              "mobile/screens/profile-screen",
+              "mobile/screens/recover-password-screen",
+              "mobile/screens/register-screen",
+              "mobile/screens/registration-confirmation-screen",
+              "mobile/screens/reset-password-screen",
+              "mobile/screens/splash-screen",
+              "mobile/screens/verify-account-screen"
+            ]
+          },
+          {
+            "group": "Mobile state",
+            "pages": [
+              "mobile/state/change-password-cubit",
+              "mobile/state/create-event-cubit",
+              "mobile/state/event-attendees-cubit",
+              "mobile/state/event-detail-cubit",
+              "mobile/state/home-tab-cubit",
+              "mobile/state/login-cubit",
+              "mobile/state/my-events-cubit",
+              "mobile/state/poll-detail-cubit",
+              "mobile/state/profile-cubit",
+              "mobile/state/recover-password-cubit",
+              "mobile/state/register-cubit",
+              "mobile/state/registration-confirmation-cubit",
+              "mobile/state/reset-password-cubit",
+              "mobile/state/splash-cubit",
+              "mobile/state/verify-account-cubit"
+            ]
+          },
+          {
+            "group": "Data model",
+            "pages": [
+              "data-model/account-logged-dto",
+              "data-model/account-login-dto",
+              "data-model/account-register-dto",
+              "data-model/activate-account-dto",
+              "data-model/create-event-dto",
+              "data-model/create-event-location-dto",
+              "data-model/create-poll-dto",
+              "data-model/delete-account-dto",
+              "data-model/email-dto",
+              "data-model/event-dto",
+              "data-model/event-id-dto",
+              "data-model/event-list-dto",
+              "data-model/event-list-with-creator-flag-dto",
+              "data-model/event-with-creator-flag-dto",
+              "data-model/location-dto",
+              "data-model/new-pair-of-tokens-dto",
+              "data-model/option-dto",
+              "data-model/poll-dto",
+              "data-model/poll-list-dto",
+              "data-model/profile-dto",
+              "data-model/refresh-token-dto",
+              "data-model/update-event-dto",
+              "data-model/update-event-location-dto",
+              "data-model/update-forgot-password-dto",
+              "data-model/update-password-dto",
+              "data-model/user-list-dto",
+              "data-model/vote-poll-dto"
+            ]
+          },
+          {
+            "group": "API",
+            "groups": [
+              {
+                "group": "Account",
+                "pages": [
+                  "api/account/account-controller-activate",
+                  "api/account/account-controller-close-account-session",
+                  "api/account/account-controller-delete-account",
+                  "api/account/account-controller-dis-join-event",
+                  "api/account/account-controller-forgot-password",
+                  "api/account/account-controller-get-events-created-by-user",
+                  "api/account/account-controller-get-my-events",
+                  "api/account/account-controller-get-profile",
+                  "api/account/account-controller-join-event",
+                  "api/account/account-controller-login",
+                  "api/account/account-controller-password-fotgot-update",
+                  "api/account/account-controller-refresh-token",
+                  "api/account/account-controller-register",
+                  "api/account/account-controller-send-email-verification",
+                  "api/account/account-controller-update-password"
+                ]
+              },
+              {
+                "group": "Event",
+                "pages": [
+                  "api/event/event-controller-create-event",
+                  "api/event/event-controller-delete-event",
+                  "api/event/event-controller-get-event-users",
+                  "api/event/event-controller-get-events",
+                  "api/event/event-controller-update-event"
+                ]
+              },
+              {
+                "group": "Poll",
+                "pages": [
+                  "api/poll/poll-controller-create-poll",
+                  "api/poll/poll-controller-get-polls",
+                  "api/poll/poll-controller-vote-poll"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

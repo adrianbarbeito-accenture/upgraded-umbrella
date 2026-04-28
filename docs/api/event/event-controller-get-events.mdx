@@ -1,0 +1,40 @@
+---
+title: GET /v1/events
+description: Return a list of available events.
+---
+
+**Tag:** `Event` &nbsp;·&nbsp; **Operation:** `EventController_getEvents`
+
+## Purpose
+
+> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant C as HomeTabScreen
+  participant API as Backend
+  participant DB as MongoDB
+  C->>API: GET /v1/events
+  API->>DB: query
+  DB-->>API: result
+  API-->>C: 200
+```
+
+## Parameters
+
+| Name | In | Required | Type | Description |
+| ---- | -- | -------- | ---- | ----------- |
+| `Content-Type` | header | no | `string` | application/json |
+
+## Responses
+
+- **200** — List of available events — [`EventListDto`](/data-model/event-list-dto)
+- **429** — Too many requests, rate limit exceeded
+- **500** — Error not handled
+
+## Used by
+
+- [`HomeTabScreen`](/mobile/screens/home-tab-screen)
+- [`MyEventsScreen`](/mobile/screens/my-events-screen)

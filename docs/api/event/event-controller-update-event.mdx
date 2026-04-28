@@ -1,0 +1,60 @@
+---
+title: PATCH /v1/events
+description: Update an event.
+---
+
+**Tag:** `Event` &nbsp;·&nbsp; **Operation:** `EventController_updateEvent`
+
+## Purpose
+
+> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant API as Backend
+  participant DB as MongoDB
+  C->>API: PATCH /v1/events
+  API->>DB: query
+  DB-->>API: result
+  API-->>C: 200
+```
+
+## Parameters
+
+| Name | In | Required | Type | Description |
+| ---- | -- | -------- | ---- | ----------- |
+| `Authorization` | header | yes | `string` | Bearer accessToken |
+| `Content-Type` | header | no | `string` | application/json |
+
+## Request body
+
+Schema: [`UpdateEventDto`](/data-model/update-event-dto)
+
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `eventId` | `string` | yes |  |
+| `eventName` | `string` | no |  |
+| `eventDate` | `string` | no |  |
+| `description` | `string` | no |  |
+| `eventType` | `string` | no |  |
+| `imageUrl` | `string` | no |  |
+| `location` | `UpdateEventLocationDto` | no |  |
+| `tags` | `array` | no |  |
+| `joinDeadline` | `string` | no |  |
+| `maxCapacity` | `number` | no |  |
+
+## Responses
+
+- **200** — Event successfully updated — [`EventDto`](/data-model/event-dto)
+- **400** — Error for not existing event
+- **401** — Invalid credentials
+- **403** — Not enough privileges
+- **429** — Too many requests, rate limit exceeded
+- **500** — Error not handled
+
+## Used by
+
+_(no mobile screens detected calling this endpoint)_

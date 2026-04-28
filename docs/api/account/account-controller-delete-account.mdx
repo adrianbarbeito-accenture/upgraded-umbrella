@@ -1,0 +1,51 @@
+---
+title: DELETE /v1/account
+description: Delete account and all related data.
+---
+
+**Tag:** `Account` &nbsp;·&nbsp; **Operation:** `AccountController_deleteAccount`
+
+## Purpose
+
+> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant API as Backend
+  participant DB as MongoDB
+  C->>API: DELETE /v1/account
+  API->>DB: query
+  DB-->>API: result
+  API-->>C: 204
+```
+
+## Parameters
+
+| Name | In | Required | Type | Description |
+| ---- | -- | -------- | ---- | ----------- |
+| `Authorization` | header | yes | `string` | Bearer accessToken |
+| `Content-Type` | header | no | `string` | application/json |
+
+## Request body
+
+Schema: [`DeleteAccountDto`](/data-model/delete-account-dto)
+
+| Property | Type | Required | Description |
+| -------- | ---- | -------- | ----------- |
+| `password` | `string` | yes |  |
+
+## Responses
+
+- **204** — User account has been deleted successfully
+- **400** — Some inputs are missed or wrong
+- **401** — Invalid credentials
+- **422** — Password is incorrect
+- **429** — Too many requests, rate limit exceeded
+- **500** — Error not handled
+
+## Used by
+
+_(no mobile screens detected calling this endpoint)_

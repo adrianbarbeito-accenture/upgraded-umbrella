@@ -1,0 +1,46 @@
+---
+title: Event Detail
+description: "User flow in the `view` feature."
+---
+
+## Sequence
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant S as EventDetailScreen
+  participant C as EventDetailCubit
+  participant R as Repository
+  participant API as Backend
+  participant DB as MongoDB
+
+  U->>S: interact
+  S->>C: dispatch
+  C->>R: call method
+  R->>API: DELETE /v1/account/events
+  API->>DB: query
+  DB-->>API: result
+  API-->>R: 204 response
+  R->>API: POST /v1/account/events
+  API->>DB: query
+  DB-->>API: result
+  API-->>R: 204 response
+  R-->>C: data
+  C-->>S: emit state
+  S-->>U: render
+```
+
+## Narrative
+
+> TODO (flow prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+
+## Components
+
+- Screen: [`EventDetailScreen`](/mobile/screens/event-detail-screen)
+- Cubit: [`EventDetailCubit`](/mobile/state/event-detail-cubit)
+- Repository: _unknown_
+
+## Endpoints
+
+- [`DELETE /v1/account/events`](/api/account/account-controller-dis-join-event)
+- [`POST /v1/account/events`](/api/account/account-controller-join-event)
