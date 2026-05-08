@@ -28,7 +28,9 @@ sequenceDiagram
 
 ## Narrative
 
-> TODO (flow prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+The user lands on the registration-confirmation screen with their email already filled in from the register step. They enter the verification code from their inbox.
+
+If the code has expired, the user can request a fresh one; that path calls `RegistrationConfirmationCubit.emailVerification`, which fires `POST /v1/account/email/verification`. The activate-account step that follows lives in a separate cubit and is exercised on the next screen of the flow rather than here.
 
 ## Components
 

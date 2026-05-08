@@ -7,7 +7,7 @@ description: Create an event.
 
 ## Purpose
 
-> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Creates a new event from the payload supplied in `CreateEventDto`. The mobile create-event flow assembles the payload across several screens (type, date, location, image), but the actual call is issued at the end of the wizard rather than per step, which is why no individual screen is linked to this endpoint by the analyzer.
 
 ## Sequence
 

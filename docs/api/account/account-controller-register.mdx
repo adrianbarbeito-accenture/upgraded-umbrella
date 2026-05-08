@@ -7,7 +7,7 @@ description: Register a new user.
 
 ## Purpose
 
-> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Creates a new account in a pending state and queues the verification email that begins the activate-account flow. The mobile register screen calls it once form validation has passed; success advances the user to the registration-confirmation screen where they enter the emailed code.
 
 ## Sequence
 

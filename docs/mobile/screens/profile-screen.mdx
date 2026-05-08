@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-> TODO (screen prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Shows the signed-in user's profile and surfaces actions like change password and logout. `ProfileCubit` reads the user from the local cache (the user repository) rather than hitting `GET /v1/account/profile` directly, and delegates logout to the same repository.
 
 ## Source
 

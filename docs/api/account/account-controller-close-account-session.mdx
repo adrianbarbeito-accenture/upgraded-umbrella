@@ -7,7 +7,7 @@ description: Close current session.
 
 ## Purpose
 
-> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Invalidates the current bearer session on the server side. The mobile app fires it during logout, but the call is issued by the user repository's logout method rather than from a screen, so the cross-link analyzer does not surface it as a screen consumer.
 
 ## Sequence
 
