@@ -32,9 +32,9 @@ sequenceDiagram
 
 ## Narrative
 
-The user opens an event from any list and lands on the event-detail screen, which shows metadata, attendees, and a join/leave button. The button's label depends on whether the user is already in the participant list.
+A member opens an event from any list and lands on the event-detail screen, where they see the event's date, location, description, attendees, and a primary action that reads either Join or Leave depending on whether they are already signed up.
 
-When the user joins, `EventDetailCubit.joinEvent` calls through the events repository to `POST /v1/account/events`; when they leave, `leaveEvent` issues `DELETE /v1/account/events`. Both calls go to the same path with different verbs and carry the event id in the body. The cubit re-emits the event with the updated participant state so the button label flips and the attendee count refreshes immediately.
+When the member joins, the participant list and count update immediately so the social signal on the screen is honest. If the event has already filled up, the system rejects the join with an event-full explanation rather than a generic error, so the member knows exactly why the action didn't work. When the member leaves, the same screen reflects the change without a refresh, freeing the seat for someone else.
 
 ## Components
 

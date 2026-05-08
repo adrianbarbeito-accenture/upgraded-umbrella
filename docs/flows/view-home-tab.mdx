@@ -28,9 +28,9 @@ sequenceDiagram
 
 ## Narrative
 
-The user lands on the home tab after sign-in. `HomeTabCubit` reads the user from the local cache and concurrently fetches the events catalogue.
+A signed-in member lands on the home tab and sees the combined feed of upcoming events and active polls.
 
-The events fetch resolves to `GET /v1/events` through the events repository (cache-then-network); the polls feed is loaded alongside it so the screen can render a single combined list. Once both arrive the cubit emits a populated state and the list renders; on a network failure the cubit emits an error state that the screen renders as a retry banner.
+The feed is assembled from the public event catalogue and the polls list, sorted chronologically so what's most imminent is most visible. Pulling down refreshes the data from the server; if the network is unavailable, the screen shows the most recent cached feed with a hint that a refresh failed, so the member is never left looking at a blank page when connectivity dips. From here members tap into individual events to learn more, or into a poll to weigh in.
 
 ## Components
 

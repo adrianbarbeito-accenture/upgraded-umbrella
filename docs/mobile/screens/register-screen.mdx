@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-New-user sign-up form. `RegisterCubit` validates name, last name, email, and password locally, then calls `POST /v1/account/register`. On success the screen forwards the user to the registration-confirmation screen, where the emailed code is entered.
+Where a prospective member opens an account. They enter their name, last name, email, and password, and the screen guides them with inline validation as they type so common mistakes are caught before submission. On success the account exists but is not yet usable — the member is forwarded to the registration-confirmation screen, where they enter the verification code that the system has just emailed them.
 
 ## Source
 

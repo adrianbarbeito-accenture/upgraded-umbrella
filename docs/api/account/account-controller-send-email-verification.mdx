@@ -7,7 +7,7 @@ description: "Send a verification email if the last code expires, as long as the
 
 ## Purpose
 
-Re-sends the email-verification code for an account that is still pending activation. The backend rate-limits on the previous code's expiry, so a fresh code is only issued once the prior one has lapsed. The mobile registration-confirmation screen calls this when the user taps the resend affordance.
+Re-sends the verification email a pending member needs to activate their account. Members trigger it from the registration-confirmation screen when the code they received hasn't arrived, has expired, or has been lost. The system enforces a cooldown so the resend can only happen once the previous code has lapsed — this protects the member from a flood of competing codes and protects the platform from being used to spam an inbox.
 
 ## Sequence
 

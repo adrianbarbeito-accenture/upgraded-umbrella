@@ -7,7 +7,7 @@ description: Create an event.
 
 ## Purpose
 
-Creates a new event from the payload supplied in `CreateEventDto`. The mobile create-event flow assembles the payload across several screens (type, date, location, image), but the actual call is issued at the end of the wizard rather than per step, which is why no individual screen is linked to this endpoint by the analyzer.
+Creates a new event proposed by an organizer. The payload carries the event's full description in one shot — title, date and time, location, cover image, and category — because that is the moment at which the event becomes visible to the rest of the community. The mobile app gathers these fields across a multi-step wizard, but only one creation request is issued, which means the wizard's intermediate state never leaks to other members until the organizer is ready.
 
 ## Sequence
 

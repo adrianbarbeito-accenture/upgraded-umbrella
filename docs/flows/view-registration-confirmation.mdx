@@ -28,9 +28,9 @@ sequenceDiagram
 
 ## Narrative
 
-The user lands on the registration-confirmation screen with their email already filled in from the register step. They enter the verification code from their inbox.
+Right after registering, the member lands on the registration-confirmation screen with their email already filled in.
 
-If the code has expired, the user can request a fresh one; that path calls `RegistrationConfirmationCubit.emailVerification`, which fires `POST /v1/account/email/verification`. The activate-account step that follows lives in a separate cubit and is exercised on the next screen of the flow rather than here.
+They enter the one-time code from the welcome email to prove they own the address, and the account moves from pending to active. If the code didn't arrive or has expired, a one-tap option sends a fresh one (with a built-in cooldown so an inbox can't be flooded). Only once the account is active does the member become eligible to sign in and start using the product.
 
 ## Components
 

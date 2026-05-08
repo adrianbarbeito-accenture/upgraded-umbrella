@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Shows the list of users who have joined the event currently being viewed. `EventAttendeesCubit` loads the names through the user repository; the underlying call resolves to `GET /v1/events/{eventId}/users`, although the static analyzer does not surface that link because the cubit method name differs from the API method name.
+Lists the members who have joined the event currently being viewed. It is the answer to "who else is going?" — the social signal that often tips a member from interested to committed. Only names are shown, never contact details, so the screen is safe to surface to anyone with access to the event.
 
 ## Source
 

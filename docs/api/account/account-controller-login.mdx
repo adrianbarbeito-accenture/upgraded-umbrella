@@ -7,7 +7,7 @@ description: Login an user.
 
 ## Purpose
 
-Authenticates a user with email and password and returns an access-token plus refresh-token bundle. It is the entry point of the post-onboarding session and is called from the login screen via `LoginCubit.login`. A successful response triggers navigation into the authenticated home graph.
+Lets a returning member prove who they are with their email and password so the system can grant them a session. It is the doorway to every other authenticated capability — joining events, voting, changing a password, viewing one's profile — none of which is reachable without first signing in. The operation only succeeds for accounts that have been activated; pending accounts get a different response so the client can route them back into the activate-account flow.
 
 ## Sequence
 

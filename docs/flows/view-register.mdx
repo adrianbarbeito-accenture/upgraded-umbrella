@@ -28,9 +28,9 @@ sequenceDiagram
 
 ## Narrative
 
-The user fills out the registration form and taps Sign up. `RegisterCubit` validates each field locally and only issues the call once the form is clean.
+A prospective member creates an account so they can join the community.
 
-It invokes `userRepository.register`, which resolves to `POST /v1/account/register`. The backend creates the account in a pending state and queues the verification email. On success the cubit emits a state carrying the user's email; the screen reads that and navigates to the registration-confirmation screen, pre-filling the email so the user only has to type the code from their inbox.
+They type their name, last name, email, and password; inline validation catches common mistakes (mismatched passwords, malformed emails) as they type, so they almost always submit a clean form. On success the system creates the account in a pending state and queues the verification email; the member is forwarded automatically to the registration-confirmation screen, with their email pre-filled, so the only thing left to do is enter the code from their inbox.
 
 ## Components
 

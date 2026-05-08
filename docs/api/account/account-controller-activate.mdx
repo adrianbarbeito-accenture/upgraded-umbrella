@@ -7,7 +7,7 @@ description: Update account status to ACTIVE for user the verificationCode is re
 
 ## Purpose
 
-Marks an account as active once the user proves ownership of the email address by submitting the verification code that was mailed to them. It is the second step of registration: the account exists in a pending state until this call succeeds. The endpoint is invoked from the verify-account screen during onboarding rather than from a Cubit method whose name the cross-link analyzer can match, which is why it shows no consumer here.
+Activates a pending account once the new member proves they own the email address they registered with. Until this step succeeds the account exists but cannot sign in or take any other action — registration is a two-step process by design, so the system never trusts an email address that hasn't been confirmed. Activation is a one-time event in the account's lifetime; subsequent failures (a wrong or expired code) keep the account in its pending state and let the member request a fresh code.
 
 ## Sequence
 

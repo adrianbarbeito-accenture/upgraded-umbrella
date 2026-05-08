@@ -7,7 +7,7 @@ description: Delete account and all related data.
 
 ## Purpose
 
-Removes the authenticated account along with every record attached to it (sessions, joined events, profile data). The request takes a `DeleteAccountDto` so the client can confirm the destructive action with credentials. After a successful call the bearer session is invalidated and any cached state on the device should be cleared. No mobile screen consumes this endpoint in the current build; it is reserved for an account-deletion path that ships later.
+Permanently closes a member's account at their explicit request. Deleting an account removes the profile, ends the session, drops the member from the participant list of every event they had joined, and discards any data the member had created that is exclusively theirs. The action is irreversible — the member must re-register from scratch if they ever want to come back — and is intentionally guarded behind a credential challenge so it cannot be triggered accidentally or by a stolen device.
 
 ## Sequence
 

@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Shows the signed-in user's profile and surfaces actions like change password and logout. `ProfileCubit` reads the user from the local cache (the user repository) rather than hitting `GET /v1/account/profile` directly, and delegates logout to the same repository.
+A member's home base for everything about their own account. It surfaces the member's name and email, plus the actions a member can take on themselves — change password, sign out, and (in due course) delete the account. It is the only place in the app where a member can leave their session intentionally.
 
 ## Source
 
