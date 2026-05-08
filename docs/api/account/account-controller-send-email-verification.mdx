@@ -7,7 +7,7 @@ description: "Send a verification email if the last code expires, as long as the
 
 ## Purpose
 
-> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Re-sends the email-verification code for an account that is still pending activation. The backend rate-limits on the previous code's expiry, so a fresh code is only issued once the prior one has lapsed. The mobile registration-confirmation screen calls this when the user taps the resend affordance.
 
 ## Sequence
 

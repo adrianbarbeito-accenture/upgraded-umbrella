@@ -7,7 +7,7 @@ description: Allow authenticated users to join as participants in an event.
 
 ## Purpose
 
-> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Registers the authenticated user as a participant in the event identified by the request payload. The backend rejects the call with a 422 when the event is full, which the mobile client surfaces to the user as a dedicated error. It is triggered from the event-detail screen when the user taps Join.
 
 ## Sequence
 

@@ -7,7 +7,7 @@ description: Return a list of events the user joined and have not been celebrate
 
 ## Purpose
 
-> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Returns the events the authenticated user has joined and that have not yet been celebrated. The response excludes past events to keep the upcoming listing honest. The endpoint is reached through the events repository's cache-then-network path rather than from a screen call directly, which is why the analyzer does not list a consumer.
 
 ## Sequence
 

@@ -36,6 +36,23 @@ Output is written to `docs/` and committed.
 5. **synth** — Claude fills in 1-paragraph prose per screen/endpoint/flow + architecture overview.
 6. **output** — write `docs/**` + Mintlify `docs.json` navigation.
 
+## Filling prose without an API key
+
+If you can't use `ANTHROPIC_API_KEY` (e.g. company policy), the
+`scripts/fill-prose.mjs` helper merges prose back into the generated MDX from
+a JSON file you can produce by hand or by pasting prompts into Claude Code /
+Claude.ai:
+
+```bash
+npm run generate -- --no-synth      # writes skeletons with TODO markers
+# Produce prose.json with shape: { "docs/api/account/.../foo.mdx": "paragraph...", ... }
+node scripts/fill-prose.mjs prose.json
+```
+
+Each TODO line in `docs/**/*.mdx` is replaced in place. Re-runs of `generate`
+overwrite the bundle, so re-apply prose afterward (or move to a CI step that
+chains them).
+
 ## Local Mintlify preview
 
 ```bash

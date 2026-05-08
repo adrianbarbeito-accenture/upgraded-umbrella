@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-> TODO (screen prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Step in the create-event wizard where the organizer picks the event's start date and time. State is held in `CreateEventCubit`, which is shared across every wizard step so the partial event survives navigation. No HTTP call happens here — the actual `POST /v1/events` is deferred to the final step.
 
 ## Source
 

@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-> TODO (screen prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Boot-time screen shown while the app decides whether to send the user into the authenticated graph or the logged-out graph. `SplashCubit` waits for the user repository to report a session state, then emits a completion event that the router listens for. No backend call is issued from this screen.
 
 ## Source
 

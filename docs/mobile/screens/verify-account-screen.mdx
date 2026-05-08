@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-> TODO (screen prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Activates a pending account by exchanging the verification code for an active state. `VerifyAccountCubit` calls into the user repository, which in turn issues `PUT /v1/account/activate`; the link is not surfaced by the static analyzer because the cubit method name does not match the API method name.
 
 ## Source
 

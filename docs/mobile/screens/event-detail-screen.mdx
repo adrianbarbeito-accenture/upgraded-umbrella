@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-> TODO (screen prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Detail view for a single event. It shows the event's metadata, attendees, and a primary call-to-action to join or leave the event. `EventDetailCubit` calls `POST /v1/account/events` to join and `DELETE /v1/account/events` to leave, surfacing event-full and other backend errors as state for the screen to render.
 
 ## Source
 

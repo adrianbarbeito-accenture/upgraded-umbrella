@@ -7,7 +7,7 @@ description: Delete account and all related data.
 
 ## Purpose
 
-> TODO (endpoint prose): run `npm run generate` with `ANTHROPIC_API_KEY` set to fill this in.
+Removes the authenticated account along with every record attached to it (sessions, joined events, profile data). The request takes a `DeleteAccountDto` so the client can confirm the destructive action with credentials. After a successful call the bearer session is invalidated and any cached state on the device should be cleared. No mobile screen consumes this endpoint in the current build; it is reserved for an account-deletion path that ships later.
 
 ## Sequence
 
