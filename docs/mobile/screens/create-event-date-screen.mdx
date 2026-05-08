@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Step in the create-event wizard where the organizer picks the event's start date and time. State is held in `CreateEventCubit`, which is shared across every wizard step so the partial event survives navigation. No HTTP call happens here — the actual `POST /v1/events` is deferred to the final step.
+Step in the create-event wizard where the organizer picks when their event happens. Date and time are entered together so members never have to chase a venue for a missing detail. The selection is held until the wizard is finished — nothing is published yet, so the organizer can navigate back and forward between steps freely.
 
 ## Source
 

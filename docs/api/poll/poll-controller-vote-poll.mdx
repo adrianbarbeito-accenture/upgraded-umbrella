@@ -7,7 +7,7 @@ description: Vote on a poll.
 
 ## Purpose
 
-Submits the authenticated user's vote on the given poll. It is intended for the poll-detail screen but is not currently consumed in a way the static analyzer can detect.
+Records a member's vote on a given poll. Each member can cast one vote per poll; submitting again replaces the previous selection rather than adding to it, so the tally always reflects the member's current opinion. The vote itself is private to the member who cast it — only aggregate results are visible to others.
 
 ## Sequence
 

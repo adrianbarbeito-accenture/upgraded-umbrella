@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Internal stateful view that renders the body of the poll-detail screen once `PollDetailCubit` has loaded the poll. It is wrapped by the public `PollDetailScreen` and never instantiated directly outside that file.
+Internal helper view that renders the body of the poll-detail screen once the poll has loaded. Members never see this as a separate screen; it is part of the poll-detail experience and exists purely to keep the loading state and the loaded state cleanly separated for the engineers who maintain it.
 
 ## Source
 

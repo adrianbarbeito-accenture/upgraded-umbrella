@@ -28,9 +28,9 @@ sequenceDiagram
 
 ## Narrative
 
-The user opens the My Events tab. `MyEventsCubit` reads the current user from the local cache and fetches the events feed.
+A member opens the My Events tab to see what they're committed to in the days and weeks ahead.
 
-The fetch resolves to `GET /v1/events` through the same events repository the home tab uses, with client-side filtering for events the user has joined. The cubit emits a populated state once the response is in; if the network fetch fails but the local cache is warm, the screen renders the cached list and shows a stale-data hint.
+The list shows only upcoming events the member has joined, in chronological order, so the most imminent commitments are always at the top. Past events drop off automatically — the tab is forward-looking, not a history. If the member is offline but has used the tab recently, they still see their cached list with a stale-data hint so a poor signal at a venue doesn't cut them off from knowing where they need to be.
 
 ## Components
 

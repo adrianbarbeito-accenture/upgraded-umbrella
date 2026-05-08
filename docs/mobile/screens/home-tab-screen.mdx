@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Default tab inside the authenticated home shell. `HomeTabCubit` fetches the public event catalogue via `GET /v1/events` and combines it with the polls feed to render a single chronological list. It is the first authenticated screen the user lands on after login.
+First thing a signed-in member sees after launching the app. It combines the public event catalogue and the active polls into a single chronological feed, so the member can scan what's coming up in the community without choosing between two views. Pulling down refreshes the feed; the screen shows a friendly retry banner if the network is unreachable.
 
 ## Source
 

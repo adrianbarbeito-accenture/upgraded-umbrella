@@ -28,9 +28,9 @@ sequenceDiagram
 
 ## Narrative
 
-The user enters credentials on the login screen and taps Login. `LoginCubit` validates the email and password locally, marks the form as submitted, and dispatches.
+A returning member opens Esmorga and signs back in with the email and password they registered with.
 
-The cubit calls `userRepository.login`, which traverses the user repository implementation, the remote datasource, and finally `EsmorgaAuthApi`'s `POST /v1/account/login` call. On success the returned token bundle is persisted and the cubit emits a success state that the screen converts into a navigation event into the authenticated home graph; on failure the screen renders the cubit's error state as an inline message.
+If the credentials match an active account, the member lands on the home tab with their upcoming events and the public catalogue ready to browse, and the device transparently keeps the session alive in the background for as long as they keep using the app. If the credentials don't match an active account, the screen explains why inline — wrong password, unknown email, or pending-activation account — so the member knows exactly what to do next instead of being told a generic error.
 
 ## Components
 

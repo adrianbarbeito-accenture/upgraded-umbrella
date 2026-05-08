@@ -7,7 +7,7 @@ description: Return a list of the names of the users who have joined an event.
 
 ## Purpose
 
-Returns the names of users who have joined the given event. It backs the event-attendees screen, but the mobile call passes through a Cubit method whose name does not match the API method's name, so the static analyzer does not list a consumer here.
+Returns the names of the members who have joined a given event. It is the data behind the "who's coming" view on the event-detail screen and provides the social signal that often tips a member from interested to committed. Only names are exposed, never email addresses or other identifying information.
 
 ## Sequence
 

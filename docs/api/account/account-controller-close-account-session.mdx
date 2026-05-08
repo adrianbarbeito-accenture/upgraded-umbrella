@@ -7,7 +7,7 @@ description: Close current session.
 
 ## Purpose
 
-Invalidates the current bearer session on the server side. The mobile app fires it during logout, but the call is issued by the user repository's logout method rather than from a screen, so the cross-link analyzer does not surface it as a screen consumer.
+Ends the member's current session on the platform. It is the operation behind signing out: the device clears its local credentials and the server invalidates the bearer token, so a future request from that device cannot continue acting on the member's behalf. Sessions also end on long inactivity, but this is the explicit, member-initiated path.
 
 ## Sequence
 

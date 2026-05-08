@@ -7,7 +7,7 @@ description: Delete event and the participant list related.
 
 ## Purpose
 
-Removes an event and every participant record attached to it. As with `updateEvent`, this is an organizer-only operation and is not wired to a mobile screen in the current build.
+Lets an organizer cancel an event they created. Deleting an event removes it from the catalogue and unsubscribes every member who had joined, so participants do not show up to a venue for an event that no longer exists. The action is final, so the mobile app guards it behind a confirmation step.
 
 ## Sequence
 

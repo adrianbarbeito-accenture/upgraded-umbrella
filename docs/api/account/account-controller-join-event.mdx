@@ -7,7 +7,7 @@ description: Allow authenticated users to join as participants in an event.
 
 ## Purpose
 
-Registers the authenticated user as a participant in the event identified by the request payload. The backend rejects the call with a 422 when the event is full, which the mobile client surfaces to the user as a dedicated error. It is triggered from the event-detail screen when the user taps Join.
+Records that a signed-in member is going to a given event. It is the operation behind the Join button on the event-detail screen and updates the participant count immediately so the event's social signal stays accurate. Capacity is enforced server-side: if the event has already filled up, the join is rejected with an event-full response so the screen can show a meaningful explanation rather than a generic failure.
 
 ## Sequence
 

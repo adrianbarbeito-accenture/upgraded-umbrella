@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Detail view for a single event. It shows the event's metadata, attendees, and a primary call-to-action to join or leave the event. `EventDetailCubit` calls `POST /v1/account/events` to join and `DELETE /v1/account/events` to leave, surfacing event-full and other backend errors as state for the screen to render.
+Where a member learns about a single event in detail. The screen presents the event's date and time, location, description, cover image, and the running list of attendees, and offers a single primary action — Join, or Leave if the member is already signed up. If the event is full, Join is disabled with a clear explanation rather than letting the member tap it and fail. The screen updates immediately when the action succeeds so the member's choice is reflected without a refresh.
 
 ## Source
 

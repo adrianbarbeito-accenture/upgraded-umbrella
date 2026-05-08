@@ -7,7 +7,7 @@ description: Get profile.
 
 ## Purpose
 
-Returns the authenticated user's profile data — name, last name, email — for display in the app. The current mobile build serves profile data from the user repository's local cache rather than calling this endpoint directly, which is why no screen is listed as a consumer.
+Returns a member's profile information — their name, last name, and email — for display in the app. It is the source of truth for any "signed in as" UI, but in normal operation the app reads this data from a local cache populated at sign-in, falling back to this call only when the cache is missing.
 
 ## Sequence
 

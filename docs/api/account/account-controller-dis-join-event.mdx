@@ -7,7 +7,7 @@ description: Allow authenticated users to disjoin as participants from an event.
 
 ## Purpose
 
-Removes the authenticated user from the participant list of an event. It mirrors the join-event call and is invoked from the same event-detail screen when the user opts to leave an event they had previously joined.
+Removes a member from the participant list of an event they had previously joined. It is the counterpart to the Join action and is the only way a member can decline an event short of letting it pass. The participant count is decremented immediately so other members see an honest signal of how popular the event still is.
 
 ## Sequence
 

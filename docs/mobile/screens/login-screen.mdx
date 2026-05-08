@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Email-and-password sign-in screen. `LoginCubit` validates the inputs locally and then issues `POST /v1/account/login`; on success it stores the token bundle and the screen navigates into the authenticated home graph. Server-side validation errors are surfaced through state changes that the screen renders as an inline message.
+How returning members sign back into Esmorga. Members provide the email they registered with and their password, and on success they land on the home tab with their upcoming events and the public catalogue ready to browse. If the credentials don't match an active account, the screen explains why inline so the member can correct the mistake without losing their place. From here, members can also pivot into the registration flow if they don't yet have an account, or the forgotten-password flow if they can't remember their credentials.
 
 ## Source
 

@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Second step of registration. The user enters the verification code that was emailed to them; if the code is missing or expired they can request a fresh one, which fires `POST /v1/account/email/verification`. Once the activate-account call succeeds elsewhere in the flow the user is sent to the login screen.
+Bridge between registering and signing in for the first time. The member's email is already filled in from the previous step; they enter the one-time code that arrived in their inbox to confirm they own the address. If the code is missing or expired, the screen offers a one-tap way to send a fresh one. Only after this step is the member able to sign in.
 
 ## Source
 

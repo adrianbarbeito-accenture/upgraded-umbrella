@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Boot-time screen shown while the app decides whether to send the user into the authenticated graph or the logged-out graph. `SplashCubit` waits for the user repository to report a session state, then emits a completion event that the router listens for. No backend call is issued from this screen.
+Brief boot screen shown while the app figures out where to take the member. If a valid session is found, the member lands on the home tab; if not, they are routed to the logged-out view. The screen exists primarily so the transition between launch and first interactive view always feels intentional rather than empty.
 
 ## Source
 

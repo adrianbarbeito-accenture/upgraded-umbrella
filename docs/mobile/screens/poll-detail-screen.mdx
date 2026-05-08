@@ -9,7 +9,7 @@ description: "Mobile screen in the `view` feature."
 
 ## Purpose
 
-Detail view for a single poll. It renders the poll's question, options, and any prior selection, and lets the user cast or change a vote. `PollDetailCubit` owns the selection state; the actual `POST /v1/polls/{pollId}/vote` call goes through the polls repository and is not picked up by the static analyzer.
+Where a member sees a single poll in full and casts (or changes) their vote. The screen shows the question, the options, and the member's current selection if they have voted before. Votes can be changed up until the poll closes, so a member is never penalized for changing their mind as a discussion develops.
 
 ## Source
 
